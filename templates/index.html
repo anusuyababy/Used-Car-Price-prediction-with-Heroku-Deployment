@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR PRICE PREDICTION APP</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            
+            <h2>USED CAR AND BIKE PRICE PREDICTION APP</h2><br>
+
+            <h3>NO OF YEARS USED</h3>
+            <select name="year" id="year">
+                <option value="Select no of years car used">Select no of years car used</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+            </select>
+
+            <h3>CAR MODEL</h3>
+            <select name="Car_Name" id="car">
+                <option value="Select car name">Select Car or Bike</option>
+                <option value="Toyota fortuner">Toyota fortuner</option>
+                <option value="Toyota innova">Toyota innova</option>
+                <option value="Toyota corolla">Toyota corolla</option>
+                <option value="Toyota etios">Toyota etios</option>
+                <option value="Toyota camry">Toyota camry</option>
+                <option value="Toyota land cruiser">Toyota land cruiser</option>
+                <option value="Honda city">Honda city</option>
+                <option value="Honda brio">Honda brio</option>
+                <option value="Honda jazz">Honda jazz</option>
+                <option value="Honda amaze">Honda amaze</option>
+                <option value="Hyundai eon">Hyundai eon</option>
+                <option value="Hyundai verna">Hyundai verna</option>
+                <option value="Hyundai i20">Hyundai i20</option>
+                <option value="Hyundai grand i10">Hyundai grand i10</option>
+                <option value="Hyundai">Hyundai other models</option>
+                <option value="Maruti Suzuki ciaz">Maruti Suzuki ciaz</option>
+                <option value="Maruti Suzuki alto">Maruti Suzuki alto</option>
+                <option value="Maruti Suzuki">Maruti Suzuki other models</option>
+                <option value="Royal Enfield Bike">Royal Enfield Bike</option>
+                <option value="Bajaj Bike">Bajaj Bike</option>
+                <option value="UM Bike">UM Bike</option>
+                <option value="Mahindra Bike">Mahindra Bike</option>
+                <option value="Suzuki Bike">Suzuki Bike</option>
+                <option value="Hyosung Bike">Hyosung Bike</option>
+                <option value="Yamaha Bike">Yamaha Bike</option>
+                <option value="TVS Bike">TVS Bike</option>
+                <option value="Honda Bike">Honda Bike</option>
+                <option value="Hero Bike">Hero Bike</option>
+            </select>
+            
+            <h3>SHOWROOM PRICE (In lakhs)</h3>
+            <input id="second" name="Present_Price" placeholder="required">
+
+            <h3>KILOMETERS DRIVEN</h3>
+            <input id="third" name="Kms_Driven" placeholder="range from 1000 to 200000">
+            
+            <h3>FUEL TYPE</h3>
+            <select name="Fuel_Type" id="fuel">
+                <option value="Select Fuel Type">Select Fuel Type</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>
+
+            <h3>SELLER TYPE</h3>
+            <select name="Seller_Type" id="seller">
+                <option value="Select seller Type">Select Seller Type</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+
+            <h3>TRANSMISSION TYPE</h3>
+            <select name="Transmission" id="mission">
+                <option value="Select transmission">Select Type</option>
+                <option value="Manual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br/><br/>
+            <br/><br/>
+            <button id="sub" type="submit ">PREDICT</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            padding: 0px;
+        }
+
+
+        #year {
+            border-radius: 60px;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        
+
+        #car {
+            border-radius: 60px;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        
+
+        
+        
+        
+        #fuel {
+            border-radius: 60px;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+
+        
+        #seller {
+            border-radius: 60px;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        } 
+
+
+      
+        
+        #mission {
+            border-radius: 60px;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        
+        
+        
+        
+        
+        
+        #sub {
+            border-radius: 60px;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        
+        
+        
+        #second {
+            border-radius: 60px;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 60px;
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        
+    </style>
+</body>
+
+</html>
